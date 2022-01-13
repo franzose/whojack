@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 namespace WhoJack
 {
     /// <summary>
-    /// Defines a basic event handler.
+    /// Defines an event handler for the given type of events.
     /// </summary>
     /// <typeparam name="T">Type of the event this handler can handle.</typeparam>
     public interface IEventHandler<in T>
