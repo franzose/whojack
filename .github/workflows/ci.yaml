@@ -5,7 +5,7 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        dotnet-version: ['6.0.x']
+        dotnet-version: ['5.0.x', '6.0.x']
     steps:
       - uses: actions/checkout@v2
       - name: Setup .NET SDK ${{ matrix.dotnet-version }}
@@ -15,8 +15,6 @@ jobs:
       - name: Install Dependencies
         run: dotnet restore
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build -f ${{ matrix.dotnet-version }} --configuration Release --no-restore
       - name: Test
-        run: dotnet test --no-restore --verbosity normal
-        with:
-          dotnet-version: ${{ matrix.dotnet-version }}
+        run: dotnet test -f ${{ matrix.dotnet-version }} --no-restore --verbosity normal
