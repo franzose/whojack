@@ -88,7 +88,7 @@ namespace WhoJack
             {
                 throw new ArgumentNullException(nameof(handler));
             }
-            
+
             AddHandler<T>(async (@event, cancellationToken) => await handler.Handle(@event, cancellationToken), handler.Priority);
         }
         
@@ -110,18 +110,7 @@ namespace WhoJack
             }
         }
 
-        public void RemoveHandlers<T>() where T : class
-        {
-            if (!_listeners.TryGetValue(typeof(T), out var list))
-            {
-                return;
-            }
-            
-            lock (Lock)
-            {
-                list.Clear();
-            }
-        }
+        public void RemoveHandlers<T>() where T : class => _listeners.TryRemove(typeof(T), out _);
 
         public void Clear() => _listeners.Clear();
     }
