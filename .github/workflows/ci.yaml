@@ -3,18 +3,19 @@ on: [push, pull_request]
 jobs:
   windows-build:
     runs-on: windows-latest
-    strategy:
-      matrix:
-        dotnet-version: ['5.0.x', '6.0.x']
     steps:
       - uses: actions/checkout@v2
-      - name: Setup .NET SDK ${{ matrix.dotnet-version }}
+      - name: Setup .NET 5 SDK
         uses: actions/setup-dotnet@v1.9.0
         with:
-          dotnet-version: ${{ matrix.dotnet-version }}
+          dotnet-version: 5.0.x
+      - name: Setup .NET 6 SDK
+        uses: actions/setup-dotnet@v1.9.0
+        with:
+          dotnet-version: 6.0.x
       - name: Install Dependencies
-        run: dotnet restore -f ${{ matrix.dotnet-version }}
+        run: dotnet restore
       - name: Build
-        run: dotnet build -f ${{ matrix.dotnet-version }} --configuration Release --no-restore
+        run: dotnet build --configuration Release --no-restore
       - name: Test
-        run: dotnet test -f ${{ matrix.dotnet-version }} --no-restore --verbosity normal
+        run: dotnet test --no-restore --verbosity normal
