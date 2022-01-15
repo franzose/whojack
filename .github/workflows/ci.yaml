@@ -13,7 +13,7 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Install Dependencies
-        run: dotnet restore
+        run: dotnet restore -f ${{ matrix.dotnet-version }}
       - name: Build
         run: dotnet build -f ${{ matrix.dotnet-version }} --configuration Release --no-restore
       - name: Test
