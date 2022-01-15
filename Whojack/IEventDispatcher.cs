@@ -1,3 +1,6 @@
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace WhoJack
 {
     /// <summary>
@@ -9,6 +12,7 @@ namespace WhoJack
         /// Dispatches the given event to all registered listeners.
         /// </summary>
         /// <param name="event">The event to pass to the event listeners.</param>
-        void Dispatch(object @event);
+        /// <param name="cancellationToken">The cancellation token</param>
+        Task Dispatch(object @event, CancellationToken cancellationToken = default);
     }
 }
