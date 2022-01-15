@@ -66,7 +66,7 @@ namespace WhoJack
                     {
                         return new List<EventHandler>
                         {
-                            new(priority, async (obj, cancellationToken) => await action(obj as T, cancellationToken))
+                            new(priority, async (@event, cancellationToken) => await action(@event as T, cancellationToken))
                         };
                     }
                 },
@@ -74,7 +74,7 @@ namespace WhoJack
                 {
                     lock (Lock)
                     {
-                        list.Add(new(priority, async (obj, cancellationToken) => await action(obj as T, cancellationToken)));
+                        list.Add(new(priority, async (@event, cancellationToken) => await action(@event as T, cancellationToken)));
                         list.Sort((a, b) => b.Priority.CompareTo(a.Priority));
                         return list;
                     }
