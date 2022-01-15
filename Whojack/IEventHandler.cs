@@ -11,7 +11,7 @@ namespace WhoJack
     {
         /// <summary>
         /// Priority of this handler among other handlers of the same event.
-        /// Higher priority means earlier invoke of the handler.
+        /// The higher priority is the earlier this handler will be invoked.
         /// </summary>
         int Priority => 0;
 
