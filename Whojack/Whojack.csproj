@@ -13,6 +13,7 @@
         <RepositoryType>git</RepositoryType>
         <Copyright>2022 Yan Ivanov</Copyright>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <PackageTags>Event Bus;Event Dispatcher;eventbus;eventdispatcher</PackageTags>
     </PropertyGroup>
     <ItemGroup>
         <None Include="../LICENSE.txt" Pack="true" PackagePath="LICENSE.txt" />
