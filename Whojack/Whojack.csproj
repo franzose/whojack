@@ -14,6 +14,7 @@
         <Copyright>2022 Yan Ivanov</Copyright>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <PackageTags>Event Bus;Event Dispatcher;eventbus;eventdispatcher</PackageTags>
+        <PackageVersion>1.0.1</PackageVersion>
     </PropertyGroup>
     <ItemGroup>
         <None Include="../LICENSE.txt" Pack="true" PackagePath="LICENSE.txt" />
