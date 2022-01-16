@@ -5,6 +5,16 @@
         <LangVersion>9</LangVersion>
         <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
         <RootNamespace>WhoJack</RootNamespace>
+        <Title>Whojack</Title>
+        <Authors>Yan Ivanov</Authors>
+        <Description>A simple event dispatcher for .NET 5+</Description>
+        <PackageProjectUrl>https://github.com/franzose/whojack</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/franzose/whojack</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <Copyright>2022 Yan Ivanov</Copyright>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     </PropertyGroup>
-
+    <ItemGroup>
+        <None Include="../LICENSE.txt" Pack="true" PackagePath="LICENSE.txt" />
+    </ItemGroup>
 </Project>
